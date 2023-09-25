@@ -62,6 +62,12 @@ We divided the file into pages to make the reading better. If accepted, we will 
 
 <hr>
 
+# Survey 
+
+To answer the RQ3, we conducted an opinion survey [Linaker et al . 2015] with 44 developers working with multiple closed-source systems. The survey is composed of questions ranging from the early stages of the software system to its continuous maintenance. The survey questions and answers are available at [`/artifacts/survey.csv`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/survey.csv).
+
+<hr>
+
 # NFR Sub-Categories
 For each NFR we subdivided them regarding the type of change that was mentioned. That allowed us to understand how many different topics the title and description could address. Following we describe each sub-category.
 
