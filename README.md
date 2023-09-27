@@ -173,7 +173,7 @@ In our dataset, we have:
 # Keywords
 
 
-The file contains the list of keywords for each NFR. We divided these keywords into two groups: (i) single keywords, and (ii) composed sentences keywords. The second group has combinations of keywords that can reinforce the presence of the NFR, due to its context. 
+The file [`/artifacts/Keywords.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Keywords.pdf) contains the list of keywords for each NFR. We divided these keywords into two groups: (i) single keywords, and (ii) composed sentences keywords. The second group has combinations of keywords that can reinforce the presence of the NFR, due to its context. 
 
 For each NFR, we also ranked the keywords according to the number of times that the keywords appeared on our manual classification. For instance, the `cleanup` keyword appeared 15 times when we were classificating maintainability PRs. 
 
