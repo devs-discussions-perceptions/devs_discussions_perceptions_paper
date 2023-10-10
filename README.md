@@ -20,37 +20,34 @@ Non-Functional Requirements (NFRs) should be defined in the early stages of the 
 
 <hr>
 
-# Developers Metrics
+# Dataset
 
-Aiming to investigate the developers' socio-technical profiles, we computed metrics describing their repository activities and code quality. We computed the metrics by gathering raw data through the GitHub API and performing aggregations to compound more complex metrics. The complete list of metrics are presented below:
+We provide a dataset with 1,383 PR discussions classified in terms of NFR presence. After manual classification, we built a dataset composed of PR
+discussions, each one classified in terms of (i) the presence of the NFRs type addressed, (ii) the location in the PR where the discussions are triggered, (iii) keywords mentioned in the discussion, and (iv) discussion content addressing the NFR. This classification allowed us to characterize the PR discussions and identify the developers discussing NFRs. The dataset is available at This material is available at [`/artifacts/dataset.csv`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/dataset.csv) 
 
-- Number of PRs merged
-- Number of PRs opened
-- Number of PRs closed
-- Mean time between merged PRs
-- Number of Commits
-- Average size of commits (Size in terms of source file)
-- Number of commits with .XML files
-- Number of commits with .Java files
-- Number of reviews
-- Number of lines revised
-- Number of modules revised
-- Number of refactorings
-- Number of comments
-- Mean time between developer comments
-- Mean discussion duration (when the developer participates)
-- Mean number of words from the developer' messages on PR discussions
-- Total number of words from the developer' messages on PR discussions
-- Experience in days (From the first contribution to the last)
+The .csv file is structured with the following columns
+- **NUMBER_PR**: The number from the PR analyzed
+- **SYSTEM**: The system analyzed
+- **URL**: The URL from the PR analyzed
+- **NFR_TYPE**: The NFR type identified in the PR discussion
+- **PHRASE**: The phrase that led to the NFR classification
+- **KEYWORDS**: The keywords related to the NFR present in the discussion
+- **LOCATION**: The location where the mention of the NFR was present (_e.g._ title, description)
+- **OBS**: Observations regarding the discussion
 
-<hr>
+In our dataset, we have:
+- 609 PR discussions related to **Maintainability**
+- 393 PR discussions related to **Security**
+- 336 PR discussions related to **Robustness**
+- 195 PR discussions related to **Performance**
 
-# Developers' Inspection Protocol
+# Keywords
 
-<p>To answer RQ2, we selected 15 developers, contributing with PRs, to manually perform an inspection on their profiles and evaluate their social metrics. Since the profiles of these developers were not available in a specific document on the repository, we created a protocol for this evaluation, in which four authors participated. </p>
+The file [`/artifacts/Keywords.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Keywords.pdf) contains the list of keywords for each NFR. We divided these keywords into two groups: (i) single keywords, and (ii) composed sentences keywords. The second group has combinations of keywords that can reinforce the presence of the NFR, due to its context. 
 
+For each NFR, we also ranked the keywords according to the number of times that the keywords appeared on our manual classification. For instance, the `cleanup` keyword appeared 15 times when we were classificating maintainability PRs. 
 
-This protocol is available at [`/artifacts/Protocol to identify developers profile.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Protocol%20to%20identify%20developers%20profile.pdf) 
+The `*` represents that this keyword can have multiple variations. For instance, `doc*` can be related to _documentation_, _document_, _documenting_, and so on.
 
 <hr>
 
@@ -64,12 +61,23 @@ We divided the file into pages to make the reading better. If accepted, we will 
 
 # Survey 
 
-To answer the RQ3, we conducted an opinion survey [Linaker et al . 2015] with 44 developers working with multiple closed-source systems. The survey is composed of questions ranging from the early stages of the software system to its continuous maintenance. The survey questions and answers are available at [`/artifacts/survey.xlsx`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/survey.xlsx).
+To answer the RQ3, we conducted an opinion survey [Linaker et al . 2015] with 44 developers working with multiple closed-source systems. The survey is composed of questions ranging from the early stages of the software system to its continuous maintenance. 
+
+The survey questions and answers are available at [`/artifacts/survey.xlsx`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/survey.xlsx). 
+
+The survey applied are available at [`/artifacts/survey.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/survey.pdf).
+
+<hr>
+
+
+# Identification Protocol and NFR Complementary Material
+
+The process of NFR identification by a single author can be posed as a threat. Although all authors are experienced with the NFRs explored in this study, we also provided complementary material with details about these NFRs to avoid misclassifications. This material is available at [`/artifacts/Protocol NFR Identification.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Protocol%20NFR%20Identification.pdf) 
 
 <hr>
 
 # NFR Sub-Categories
-For each NFR we subdivided them regarding the type of change that was mentioned. That allowed us to understand how many different topics the title and description could address. Following we describe each sub-category.
+For each NFR we subdivided them regarding the type of change that was mentioned in the discussion. That allowed us to understand how many different topics the title and description could address. Following we describe each sub-category.
 
 **Robustness**
 - Error Representability: whether errors are properly represented/specified/thrown
@@ -95,8 +103,32 @@ For each NFR we subdivided them regarding the type of change that was mentioned.
 - Move Component: whether the change focus on moving components that could be highly coupled, hampering the maintainability
 - Documentation: whether the change improves the software documentation
 - Readability: whether the change improves the code readability
-- Extensibility: 
+- Extensibility:  whether the change improves the modules extensibility 
 - Encapsulation: whether the change improves the modules encapsulation 
+
+<hr>
+# Developers Metrics
+
+Aiming to investigate the developers' socio-technical profiles, we computed metrics describing their repository activities and code quality. We computed the metrics by gathering raw data through the GitHub API and performing aggregations to compound more complex metrics. The complete list of metrics are presented below:
+
+- Number of PRs merged
+- Number of PRs opened
+- Number of PRs closed
+- Mean time between merged PRs
+- Number of Commits
+- Average size of commits (Size in terms of source file)
+- Number of commits with .XML files
+- Number of commits with .Java files
+- Number of reviews
+- Number of lines revised
+- Number of modules revised
+- Number of refactorings
+- Number of comments
+- Mean time between developer comments
+- Mean discussion duration (when the developer participates)
+- Mean number of words from the developer' messages on PR discussions
+- Total number of words from the developer' messages on PR discussions
+- Experience in days (From the first contribution to the last)
 
 <hr>
 
@@ -127,6 +159,7 @@ The list with these metrics for all developers are available at [`/artifacts/met
 
 <hr>
 
+
 # Developers' Profile (Clusterization)
 
 To understand the developer's socio-technical profile, we clusterize them. Below, we made available the code used for clusterization and analysis.
@@ -137,47 +170,23 @@ To understand the developer's socio-technical profile, we clusterize them. Below
 
 <hr>
 
+# Developers' Inspection Protocol
+
+<p>To answer RQ2, we selected 15 developers, contributing with PRs, to manually perform an inspection on their profiles and evaluate their social metrics. Since the profiles of these developers were not available in a specific document on the repository, we created a protocol for this evaluation, in which four authors participated. </p>
+
+
+This protocol is available at [`/artifacts/Protocol to identify developers profile.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Protocol%20to%20identify%20developers%20profile.pdf) 
+
+<hr>
+
 # Open Coding Developers (Codes and Categories)
 
 We wanted to understand what makes the discuss NFRs. For that purpose, we analyzed other artifacts available (e.g., Github profile and Spring Team page) that could help us to understand what could make these developers be discussing specific NFRs. Our manual analysis through open coding generated 17 codes and 6 categories, which allow us to understand who are these developers. More details about these codes and categories are available at [`/artifacts/Open Coding Developers.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Open%20Coding%20Developers.pdf) 
 
 <hr>
 
-# Identification Protocol and NFR Complementary Material
-
-The process of NFR identification by a single author can be posed as a threat. Although all authors are experienced with the NFRs explored in this study, we also provided complementary material with details about these NFRs to avoid misclassifications. This material is available at [`/artifacts/Protocol NFR Identification.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Protocol%20NFR%20Identification.pdf) 
-
-<hr>
-
-# Dataset
-
-We provide a dataset with 1,383 PR discussions classified in terms of NFR presence. After manual classification, we built a dataset composed of PR
-discussions, each one classified in terms of (i) the presence of the NFRs type addressed, (ii) the location in the PR where the discussions are triggered, (iii) keywords mentioned in the discussion, and (iv) discussion content addressing the NFR. This classification allowed us to characterize the PR discussions and identify the developers discussing NFRs. The dataset is available at This material is available at [`/artifacts/dataset.csv`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/dataset.csv) 
-
-The .csv file is structured with the following columns
-- **NUMBER_PR**: The number from the PR analyzed
-- **SYSTEM**: The system analyzed
-- **URL**: The URL from the PR analyzed
-- **NFR_TYPE**: The NFR type identified in the PR discussion
-- **PHRASE**: The phrase that led to the NFR classification
-- **KEYWORDS**: The keywords related to the NFR present in the discussion
-- **LOCATION**: The location where the mention of the NFR was present (_e.g._ title, description)
-- **OBS**: Observations regarding the discussion
-
-In our dataset, we have:
-- 609 PR discussions related to **Maintainability**
-- 393 PR discussions related to **Security**
-- 336 PR discussions related to **Robustness**
-- 195 PR discussions related to **Performance**
-
-# Keywords
 
 
-The file [`/artifacts/Keywords.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Keywords.pdf) contains the list of keywords for each NFR. We divided these keywords into two groups: (i) single keywords, and (ii) composed sentences keywords. The second group has combinations of keywords that can reinforce the presence of the NFR, due to its context. 
-
-For each NFR, we also ranked the keywords according to the number of times that the keywords appeared on our manual classification. For instance, the `cleanup` keyword appeared 15 times when we were classificating maintainability PRs. 
-
-The `*` represents that this keyword can have multiple variations. For instance, `doc*` can be related to _documentation_, _document_, _documenting_, and so on.
 
 
 
