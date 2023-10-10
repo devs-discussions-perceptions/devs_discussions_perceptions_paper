@@ -22,7 +22,7 @@ Non-Functional Requirements (NFRs) should be defined in the early stages of the 
 
 # Dataset
 
-We provide a dataset with 1,383 PR discussions classified in terms of NFR presence. After manual classification, we built a dataset composed of PR
+We provide a dataset with 1,383 PR discussions classified regarding NFR presence. After manual classification, we built a dataset composed of PR
 discussions, each one classified in terms of (i) the presence of the NFRs type addressed, (ii) the location in the PR where the discussions are triggered, (iii) keywords mentioned in the discussion, and (iv) discussion content addressing the NFR. This classification allowed us to characterize the PR discussions and identify the developers discussing NFRs. The dataset is available at This material is available at [`/artifacts/dataset.csv`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/dataset.csv) 
 
 The .csv file is structured with the following columns
@@ -43,9 +43,9 @@ In our dataset, we have:
 
 # Keywords
 
-The file [`/artifacts/Keywords.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Keywords.pdf) contains the list of keywords for each NFR. We divided these keywords into two groups: (i) single keywords, and (ii) composed sentences keywords. The second group has combinations of keywords that can reinforce the presence of the NFR, due to its context. 
+The file [`/artifacts/Keywords.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Keywords.pdf) contains the list of keywords for each NFR. We divided these keywords into two groups: (i) single keywords and (ii) composed sentences keywords. The second group has combinations of keywords that can reinforce the presence of the NFR due to its context. 
 
-For each NFR, we also ranked the keywords according to the number of times that the keywords appeared on our manual classification. For instance, the `cleanup` keyword appeared 15 times when we were classificating maintainability PRs. 
+For each NFR, we also ranked the keywords according to the number of times that the keywords appeared on our manual classification. For instance, the `cleanup` keyword appeared 15 times when we were classifying maintainability PRs. 
 
 The `*` represents that this keyword can have multiple variations. For instance, `doc*` can be related to _documentation_, _document_, _documenting_, and so on.
 
@@ -53,7 +53,7 @@ The `*` represents that this keyword can have multiple variations. For instance,
 
 # Open Coding NFRs (Codes and Categories)
 
-To understand the content of the NFR discussions, we focused on analyzing the titles and descriptions in the PRs discussions. For that purpose, we randomly selected 160 PRs to perform a qualitative analysis. To make sure that we were evaluating all NFRs equally, we divided this analysis based on the total number of each NFR in our dataset. This analysis was performed on the PRs that we knew mentioned the NFRs in the title or description. Through the process of open coding, we generated 35 codes and nine categories that allowed us to understand the content of these titles and descriptions. The list of codes and categories are available at [`/artifacts/Open Coding NFRs.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Open%20Coding%20NFRs.pdf) 
+To understand the content of the NFR discussions, we focused on analyzing the titles and descriptions in the PRs discussions. For that purpose, we randomly selected 160 PRs for a qualitative analysis. To ensure we evaluated all NFRs equally, we divided this analysis based on the total number of each NFR in our dataset. This analysis was performed on the PRs we knew mentioned the NFRs in the title or description. Through open coding, we generated 35 codes and nine categories that allowed us to understand the content of these titles and descriptions. The list of codes and categories are available at [`/artifacts/Open Coding NFRs.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Open%20Coding%20NFRs.pdf) 
 
 We divided the file into pages to make the reading better. If accepted, we will make available the Miro link with the full board with the codes. The last page contains the whole coding.
 
@@ -65,7 +65,7 @@ To answer the RQ3, we conducted an opinion survey [Linaker et al . 2015] with 44
 
 The survey questions and answers are available at [`/artifacts/survey.xlsx`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/survey.xlsx). 
 
-The survey applied are available at [`/artifacts/survey.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/survey.pdf).
+The survey applied is available at [`/artifacts/survey.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/survey.pdf).
 
 <hr>
 
@@ -77,7 +77,7 @@ The process of NFR identification by a single author can be posed as a threat. A
 <hr>
 
 # NFR Sub-Categories
-For each NFR we subdivided them regarding the type of change that was mentioned in the discussion. That allowed us to understand how many different topics the title and description could address. Following we describe each sub-category.
+For each NFR we subdivided them regarding the type of change that was mentioned in the discussion. That allowed us to understand how many different topics the title and description could address. Following, we describe each sub-category.
 
 **Robustness**
 - Error Representability: whether errors are properly represented/specified/thrown
@@ -86,25 +86,25 @@ For each NFR we subdivided them regarding the type of change that was mentioned 
 
 **Performance**
 - Memory Usage: whether the change increased the memory usage on the application
-- Concurrency (Thread Sync): whether there was a change in the concurrency of the system, by using threads
-- Concurrency (Scheduling): whether there was a change in the concurrency of the system, by using scheduling
+- Concurrency (Thread Sync): whether there was a change in the concurrency of the system by using threads
+- Concurrency (Scheduling): whether there was a change in the concurrency of the system by using scheduling
 - Response Time: whether the change increased (or decreased) the response time (_e.g._ page loading)
-- Complexity: whether the change increased (or decreased) the the computational complexity
+- Complexity: whether the change increased (or decreased) the computational complexity
 
 **Security**
-- Customize Parameters: whether the change allow configure security parameters
-- Information Protection: whether the change avoid accessing encrypted addresses
-- Support for New Feature: whether the change support security features (_e.g._ authentication mechanisms) 
-- Inconsistent Behavior: whether the change fix an inconsistent behavior related to security
+- Customize Parameters: whether the change allows configure security parameters
+- Information Protection: whether the change avoids accessing encrypted addresses
+- Support for New Feature: whether the change supports security features (_e.g._ authentication mechanisms) 
+- Inconsistent Behavior: whether the change fixes an inconsistent behavior related to security
 
 **Maintainability**
 - Feature Enhancement: whether the change is related to an improvement in the system maintainability 
-- Code Simplification: whether the changes aims at simplify the code, improving its readability
-- Move Component: whether the change focus on moving components that could be highly coupled, hampering the maintainability
+- Code Simplification: whether the changes aim at simplify the code, improving its readability
+- Move Component: whether the change focuses on moving components that could be highly coupled, hampering the maintainability
 - Documentation: whether the change improves the software documentation
 - Readability: whether the change improves the code readability
-- Extensibility:  whether the change improves the modules extensibility 
-- Encapsulation: whether the change improves the modules encapsulation 
+- Extensibility:  whether the change improves the modules' extensibility 
+- Encapsulation: whether the change improves the modules' encapsulation 
 
 <hr>
 # Developers Metrics
@@ -126,25 +126,25 @@ Aiming to investigate the developers' socio-technical profiles, we computed metr
 - Number of comments
 - Mean time between developer comments
 - Mean discussion duration (when the developer participates)
-- Mean number of words from the developer' messages on PR discussions
-- Total number of words from the developer' messages on PR discussions
+- Mean number of words from the developers' messages on PR discussions
+- Total number of words from the developers' messages on PR discussions
 - Experience in days (From the first contribution to the last)
 
 <hr>
 
 # Developers' NFR Metrics
 
-We selected developers who had high participation on specific tasks. With this approach, we defined 15 developers to perform an investigation of their profiles. We computed the following metrics:
+We selected developers who had high participation in specific tasks. With this approach, we defined 15 developers to perform an investigation of their profiles. We computed the following metrics:
 
-- **participates_[NFR]**: Number of times that the developer participates in a discussion related to the NFR (e.g. participates_security: 10, means that the developer participated in 10 discussions related to security)
+- **participates_[NFR]**: Number of times that the developer participates in a discussion related to the NFR (e.g., participates_security: 10, means that the developer participated in 10 discussions related to security)
 - **opened_discussion_[NFR]**: Number of times that the developer opened discussions related to the NFR
 - **commented_[NFR]**: Number of times that the developer commented on discussions related to the NFR
 - **reviews_[NFR]**: Number of times that the developer reviewed source code on discussions related to the NFR
 - **commited_[NFR]**: Number of times that the developer had commits linked to discussions related to the NFR
 
-None indicates the number of times that the developer did not participated in any task related to the NFRs All NFRs is the total sum for the tasks regarding the four NFRs
+None indicates the number of times that the developer did not participate in any task related to the NFRs All NFRs is the total sum for the tasks regarding the four NFRs
 
-For each metric we computed the quartiles and indicated whether the developer was part of the high, low, or medium quartile. The never tag is marked as True when the developer never performs the task for the correspondent NFR. To exemplify, let us consider the following metrics:
+For each metric, we computed the quartiles and indicated whether the developer was part of the high, low, or medium quartile. The never tag is marked as True when the developer never performs the task for the correspondent NFR. To exemplify, let us consider the following metrics:
 
 ```
 "reviewed_robustness_high": true,
@@ -153,9 +153,9 @@ For each metric we computed the quartiles and indicated whether the developer wa
 "reviewed_robustness_never": false
 ```
   
-In this case, the developer had a high rate of reviews related to Robustness when compared to other developers in the same system. 
+In this case, the developer had a high rate of reviews related to Robustness compared to other developers in the same system. 
 
-The list with these metrics for all developers are available at [`/artifacts/metrics/`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/tree/main/artifacts/metrics) 
+The list with these metrics for all developers is available at [`/artifacts/metrics/`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/tree/main/artifacts/metrics) 
 
 <hr>
 
@@ -181,7 +181,7 @@ This protocol is available at [`/artifacts/Protocol to identify developers profi
 
 # Open Coding Developers (Codes and Categories)
 
-We wanted to understand what makes the discuss NFRs. For that purpose, we analyzed other artifacts available (e.g., Github profile and Spring Team page) that could help us to understand what could make these developers be discussing specific NFRs. Our manual analysis through open coding generated 17 codes and 6 categories, which allow us to understand who are these developers. More details about these codes and categories are available at [`/artifacts/Open Coding Developers.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Open%20Coding%20Developers.pdf) 
+We wanted to understand what makes them discuss NFRs. For that purpose, we analyzed other artifacts available (e.g., Github profile and Spring Team page) that could help us understand what could make these developers discuss specific NFRs. Our manual analysis through open coding generated 17 codes and 6 categories, which allowed us to understand who these developers are. More details about these codes and categories are available at [`/artifacts/Open Coding Developers.pdf`](https://github.com/devs-discussions-perceptions/devs_discussions_perceptions_paper/blob/main/artifacts/Open%20Coding%20Developers.pdf) 
 
 <hr>
 
